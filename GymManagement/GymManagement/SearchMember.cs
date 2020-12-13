@@ -60,6 +60,9 @@ namespace GymManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+            int search = rnd.Next(1, 100);
+            txtID.Text = search.ToString();
 
         }
     }
