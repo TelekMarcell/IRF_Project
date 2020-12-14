@@ -42,7 +42,7 @@ namespace GymManagement
             string city = txtCity.Text;
 
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Temp\Konditerem.mdf;Integrated Security=True";
+            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
             cnd.CommandText = "Insert into UjMunkatars (Keresztnev,Vezeteknev,Nem,SzuletesiDatum,Mobil,Email,Csatlakozas,Megye,Varos) values('" + vnev + "','" + knev + "','" + nem + "','" + szuldat + "','" + mobil + "','" + email + "','" + joindate + "','" + state + "','" + city + "')";

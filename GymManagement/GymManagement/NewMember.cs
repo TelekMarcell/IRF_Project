@@ -22,19 +22,9 @@ namespace GymManagement
         {
             NewMemberClass mb = new NewMemberClass(txtVezeteknev.Text,txtKeresztnev.Text,comboBoxNem.Text,dateTimePickerSzul.Text,txtTelefon.Text,txtEmail.Text,dateTimePickerJoin.Text,comboBoxGymTime.Text,richTextBoxAdress.Text,comboBoxDuration.Text);
             UjTag.Add(mb);
-            /* string vnev = txtVezeteknev.Text;
-            string knev = txtKeresztnev.Text;
-            string nem = comboBox1.Text;
-            string szuldat = dateTimePickerSzul.Text;
-            string mobil = txtTelefon.Text;
-            string email = txtEmail.Text;
-            string joindate = dateTimePickerJoin.Text;
-            string gymtime = comboBoxGymTime.Text;
-            string adress = richTextBoxAdress.Text;
-            string membership = comboBoxDuration.Text;*/
-
+         
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Temp\Konditerem.mdf;Integrated Security=True"
+            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
             cnd.CommandText = "Insert into UjTag (Keresztnev,Vezeteknev,Nem,SzuletesiDatum,Mobil,Email,Csatlakozas,KondiIdo,Lakcim,Tagsaghossza) values('" + mb.vnev + "','" + mb.knev + "','" + mb.nem + "','" + mb.szuldat + "','" + mb.mobil + "','" + mb.email + "','" + mb.joindate + "','" + mb.gymtime + "','" + mb.adress + "','" + mb.membership + "')";
