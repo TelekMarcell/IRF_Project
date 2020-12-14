@@ -58,19 +58,24 @@ namespace GymManagement
 
             dataGridView1.DataSource = DS.Tables[0];
 
-            chartGender.DataSource = dataGridView1;
+            chartGender.Series.Add(new Series());
+            chartGender.Series[0].XValueMember = dataGridView1.Columns["Nem"].HeaderText;
+            chartGender.Series[0].YValueMembers = dataGridView1.Columns["Nem"].DataPropertyName;
+            chartGender.DataSource = dataGridView1.DataSource;
 
-            var series = chartGender.Series[0];
-            series.ChartType = SeriesChartType.Column;
-            series.XValueMember = "Nem";
-            series.YValueMembers = "Count of Nem";
-            series.BorderWidth = 2;
-            var legend = chartGender.Legends[0];
-            legend.Enabled = false;
+            chartGender.Series[0].ChartType = SeriesChartType.Column;
 
-            var chartArea = chartGender.ChartAreas[0];
-            chartArea.AxisX.MajorGrid.Enabled = false;
-            chartArea.AxisY.MajorGrid.Enabled = false;
+            /* var series = chartGender.Series[0];
+             series.ChartType = SeriesChartType.Column;
+             series.XValueMember = "Nem";
+             series.YValueMembers = "Count of Nem";
+             series.BorderWidth = 2;
+             var legend = chartGender.Legends[0];
+             legend.Enabled = false;
+
+             var chartArea = chartGender.ChartAreas[0];
+             chartArea.AxisX.MajorGrid.Enabled = false;
+             chartArea.AxisY.MajorGrid.Enabled = false;*/
         }
 
         private void button1_Click(object sender, EventArgs e)
