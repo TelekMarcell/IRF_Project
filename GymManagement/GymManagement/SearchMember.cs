@@ -58,24 +58,28 @@ namespace GymManagement
 
             dataGridView1.DataSource = DS.Tables[0];
 
-            chartGender.Series.Add(new Series());
+            /*chartGender.Series.Add(new Series());
             chartGender.Series[0].XValueMember = dataGridView1.Columns["Nem"].HeaderText;
             chartGender.Series[0].YValueMembers = dataGridView1.Columns["Nem"].DataPropertyName;
             chartGender.DataSource = dataGridView1.DataSource;
 
-            chartGender.Series[0].ChartType = SeriesChartType.Column;
+            chartGender.Series[0].ChartType = SeriesChartType.Column;*/
 
-            /* var series = chartGender.Series[0];
-             series.ChartType = SeriesChartType.Column;
-             series.XValueMember = "Nem";
-             series.YValueMembers = "Count of Nem";
-             series.BorderWidth = 2;
-             var legend = chartGender.Legends[0];
-             legend.Enabled = false;
+            chartGender.DataSource = UjTag;
 
-             var chartArea = chartGender.ChartAreas[0];
-             chartArea.AxisX.MajorGrid.Enabled = false;
-             chartArea.AxisY.MajorGrid.Enabled = false;*/
+            var series = chartRateData.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+            series.BorderWidth = 2;
+
+            var legend = chartRateData.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chartRateData.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

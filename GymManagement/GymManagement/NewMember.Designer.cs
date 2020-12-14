@@ -33,8 +33,6 @@
             this.txtVezeteknev = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.dateTimePickerSzul = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerJoin = new System.Windows.Forms.DateTimePicker();
             this.richTextBoxAdress = new System.Windows.Forms.RichTextBox();
@@ -53,6 +51,7 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxNem = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtKeresztnev
@@ -82,34 +81,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 3;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(134, 219);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(66, 22);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Férfi";
-            this.radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(200, 220);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 22);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nő";
-            this.radioButton2.UseVisualStyleBackColor = false;
             // 
             // dateTimePickerSzul
             // 
@@ -315,12 +286,24 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Perfect Gym";
             // 
+            // comboBoxNem
+            // 
+            this.comboBoxNem.FormattingEnabled = true;
+            this.comboBoxNem.Items.AddRange(new object[] {
+            "Férfi",
+            "No"});
+            this.comboBoxNem.Location = new System.Drawing.Point(139, 219);
+            this.comboBoxNem.Name = "comboBoxNem";
+            this.comboBoxNem.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxNem.TabIndex = 26;
+            // 
             // NewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(632, 492);
+            this.Controls.Add(this.comboBoxNem);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSave);
@@ -339,8 +322,6 @@
             this.Controls.Add(this.richTextBoxAdress);
             this.Controls.Add(this.dateTimePickerJoin);
             this.Controls.Add(this.dateTimePickerSzul);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTelefon);
             this.Controls.Add(this.txtVezeteknev);
@@ -361,8 +342,6 @@
         private System.Windows.Forms.TextBox txtVezeteknev;
         private System.Windows.Forms.TextBox txtTelefon;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.DateTimePicker dateTimePickerSzul;
         private System.Windows.Forms.DateTimePicker dateTimePickerJoin;
         private System.Windows.Forms.RichTextBox richTextBoxAdress;
@@ -381,5 +360,6 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxNem;
     }
 }

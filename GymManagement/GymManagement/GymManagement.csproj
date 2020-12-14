@@ -80,6 +80,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="KonditeremDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KonditeremDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +97,7 @@
     <Compile Include="NewMember.Designer.cs">
       <DependentUpon>NewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewMemberClass.cs" />
     <Compile Include="NewStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,17 @@
     <EmbeddedResource Include="ViewEquipment.resx">
       <DependentUpon>ViewEquipment.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="KonditeremDataSet.xsc">
+      <DependentUpon>KonditeremDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KonditeremDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KonditeremDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KonditeremDataSet.xss">
+      <DependentUpon>KonditeremDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
