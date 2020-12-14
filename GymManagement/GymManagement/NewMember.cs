@@ -34,7 +34,7 @@ namespace GymManagement
             string membership = comboBoxDuration.Text;*/
 
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source = (LocalDB)\\MSSQLLocalDB; database = Konditerem; Integrated Security=True";
+            con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Temp\Konditerem.mdf;Integrated Security=True"
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
             cnd.CommandText = "Insert into UjTag (Keresztnev,Vezeteknev,Nem,SzuletesiDatum,Mobil,Email,Csatlakozas,KondiIdo,Lakcim,Tagsaghossza) values('" + mb.vnev + "','" + mb.knev + "','" + mb.nem + "','" + mb.szuldat + "','" + mb.mobil + "','" + mb.email + "','" + mb.joindate + "','" + mb.gymtime + "','" + mb.adress + "','" + mb.membership + "')";

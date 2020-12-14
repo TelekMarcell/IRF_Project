@@ -46,7 +46,7 @@ namespace GymManagement
         private void SearchMember_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source = (LocalDB)\\MSSQLLocalDB; database = Konditerem; Integrated Security=True";
+            con.ConnectionString = "Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\\Temp\\Konditerem.mdf; Integrated Security = True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
 
@@ -65,7 +65,7 @@ namespace GymManagement
 
             chartGender.Series[0].ChartType = SeriesChartType.Column;*/
 
-            chartGender.DataSource = UjTag;
+            /*chartGender.DataSource = UjTag;
 
             var series = chartRateData.Series[0];
             series.ChartType = SeriesChartType.Line;
@@ -79,7 +79,7 @@ namespace GymManagement
             var chartArea = chartRateData.ChartAreas[0];
             chartArea.AxisX.MajorGrid.Enabled = false;
             chartArea.AxisY.MajorGrid.Enabled = false;
-            chartArea.AxisY.IsStartedFromZero = false;
+            chartArea.AxisY.IsStartedFromZero = false;*/
         }
 
         private void button1_Click(object sender, EventArgs e)

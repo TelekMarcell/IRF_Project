@@ -27,7 +27,7 @@ namespace GymManagement
             string cost = txtAr.Text;
 
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "data source = (LocalDB)\\MSSQLLocalDB; database = Konditerem; Integrated Security=True";
+            con.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Temp\Konditerem.mdf;Integrated Security=True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
             cnd.CommandText = "Insert into Eszkozok (Eszkoz,Leiras,HasznaltIzmok,Datum,Ar) values('" + equipment + "','" + description + "','" + muscle + "','" + date + "','" + cost + "')";
