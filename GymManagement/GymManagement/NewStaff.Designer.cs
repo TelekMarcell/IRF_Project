@@ -37,8 +37,6 @@
             this.dateTimePickerWork = new System.Windows.Forms.DateTimePicker();
             this.txtMaile = new System.Windows.Forms.TextBox();
             this.txtState = new System.Windows.Forms.TextBox();
-            this.radioButtonFerf = new System.Windows.Forms.RadioButton();
-            this.radioButtonNoi = new System.Windows.Forms.RadioButton();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +49,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.buttonReset = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.comboBoxNem = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label11
@@ -115,28 +114,6 @@
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(100, 20);
             this.txtState.TabIndex = 33;
-            // 
-            // radioButtonFerf
-            // 
-            this.radioButtonFerf.AutoSize = true;
-            this.radioButtonFerf.Location = new System.Drawing.Point(67, 221);
-            this.radioButtonFerf.Name = "radioButtonFerf";
-            this.radioButtonFerf.Size = new System.Drawing.Size(45, 17);
-            this.radioButtonFerf.TabIndex = 34;
-            this.radioButtonFerf.TabStop = true;
-            this.radioButtonFerf.Text = "Férfi";
-            this.radioButtonFerf.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNoi
-            // 
-            this.radioButtonNoi.AutoSize = true;
-            this.radioButtonNoi.Location = new System.Drawing.Point(129, 220);
-            this.radioButtonNoi.Name = "radioButtonNoi";
-            this.radioButtonNoi.Size = new System.Drawing.Size(39, 17);
-            this.radioButtonNoi.TabIndex = 35;
-            this.radioButtonNoi.TabStop = true;
-            this.radioButtonNoi.Text = "Nő";
-            this.radioButtonNoi.UseVisualStyleBackColor = true;
             // 
             // txtCity
             // 
@@ -273,6 +250,17 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // comboBoxNem
+            // 
+            this.comboBoxNem.FormattingEnabled = true;
+            this.comboBoxNem.Items.AddRange(new object[] {
+            "Férfi",
+            "No"});
+            this.comboBoxNem.Location = new System.Drawing.Point(68, 214);
+            this.comboBoxNem.Name = "comboBoxNem";
+            this.comboBoxNem.Size = new System.Drawing.Size(85, 21);
+            this.comboBoxNem.TabIndex = 49;
+            // 
             // NewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +268,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(632, 492);
+            this.Controls.Add(this.comboBoxNem);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label9);
@@ -292,8 +281,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCity);
-            this.Controls.Add(this.radioButtonNoi);
-            this.Controls.Add(this.radioButtonFerf);
             this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtMaile);
             this.Controls.Add(this.dateTimePickerWork);
@@ -320,8 +307,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerWork;
         private System.Windows.Forms.TextBox txtMaile;
         private System.Windows.Forms.TextBox txtState;
-        private System.Windows.Forms.RadioButton radioButtonFerf;
-        private System.Windows.Forms.RadioButton radioButtonNoi;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -334,5 +319,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.ComboBox comboBoxNem;
     }
 }

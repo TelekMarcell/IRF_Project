@@ -46,7 +46,7 @@ namespace GymManagement
         private void SearchMember_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\\Temp\\Konditerem.mdf; Integrated Security = True";
+            con.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Temp\\Konditerem.mdf; Integrated Security = True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
 

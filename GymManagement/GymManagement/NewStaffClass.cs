@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GymManagement
 {
-    class NewMemberClass
+    class NewStaffClass
     {
         public string vnev { get; set; }
         public string knev { get; set; }
@@ -15,11 +15,10 @@ namespace GymManagement
         public string mobil { get; set; }
         public string email { get; set; }
         public string joindate { get; set; }
-        public string gymtime { get; set; }
-        public string adress { get; set; }
-        public string membership { get; set; }
+        public string state { get; set; }
+        public string city { get; set; }
 
-        public NewMemberClass(string vnev, string knev, string nem, string szuldat, string mobil, string email, string joindate, string gymtime, string adress, string membership)
+        public NewStaffClass(string vnev, string knev, string nem, string szuldat, string mobil, string email, string joindate, string state, string city)
         {
             this.vnev = vnev;
             this.knev = knev;
@@ -28,9 +27,8 @@ namespace GymManagement
             this.mobil = mobil;
             this.email = email;
             this.joindate = joindate;
-            this.gymtime = gymtime;
-            this.adress = adress;
-            this.membership = membership;
+            this.state = state;
+            this.city = city;
         }
     }
 }

@@ -18,34 +18,17 @@ namespace GymManagement
             InitializeComponent();
         }
 
+        private List<NewStaffClass> UjMunkatars = new List<NewStaffClass>();
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            string vnev = txtVeznev.Text;
-            string knev = txtKernev.Text;
-
-            string nem = "";
-            bool IsChecked = radioButtonFerf.Checked;
-            if (IsChecked)
-            {
-                nem = radioButtonFerf.Text;
-            }
-            else
-            {
-                nem = radioButtonNoi.Text;
-            }
-
-            string szuldat = dateTimePickerDOB.Text;
-            string mobil = txtPhone.Text;
-            string email = txtMaile.Text;
-            string joindate = dateTimePickerWork.Text;
-            string state = txtState.Text;
-            string city = txtCity.Text;
+            NewStaffClass stf = new NewStaffClass(txtVeznev.Text, txtKernev.Text, comboBoxNem.Text, dateTimePickerDOB.Text, txtPhone.Text, txtMaile.Text, dateTimePickerWork.Text, txtState.Text, txtCity.Text);
+            UjMunkatars.Add(stf);
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
-            cnd.CommandText = "Insert into UjMunkatars (Keresztnev,Vezeteknev,Nem,SzuletesiDatum,Mobil,Email,Csatlakozas,Megye,Varos) values('" + vnev + "','" + knev + "','" + nem + "','" + szuldat + "','" + mobil + "','" + email + "','" + joindate + "','" + state + "','" + city + "')";
+            cnd.CommandText = "Insert into UjMunkatars (Keresztnev,Vezeteknev,Nem,SzuletesiDatum,Mobil,Email,Csatlakozas,Megye,Varos) values('" + stf.vnev + "','" + stf.knev + "','" + stf.nem + "','" + stf.szuldat + "','" + stf.mobil + "','" + stf.email + "','" + stf.joindate + "','" + stf.state + "','" + stf.city + "')";
 
             SqlDataAdapter DA = new SqlDataAdapter(cnd);
             DataSet DS = new DataSet();
@@ -57,8 +40,7 @@ namespace GymManagement
         {
             txtVeznev.Clear();
             txtKernev.Clear();
-            radioButtonFerf.Checked = false;
-            radioButtonNoi.Checked = false;
+            comboBoxNem.ResetText();
             txtPhone.Clear();
             txtMaile.Clear();
             txtState.Clear();
