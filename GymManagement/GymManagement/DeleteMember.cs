@@ -67,7 +67,7 @@ namespace GymManagement
         private void button1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int delete = rnd.Next(1, 100);
+            int delete = rnd.Next(1, 20);
             txtBID.Text = delete.ToString();
         }
     }

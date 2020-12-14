@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GymManagement
 {
@@ -56,12 +57,26 @@ namespace GymManagement
             DA.Fill(DS);
 
             dataGridView1.DataSource = DS.Tables[0];
+
+            chartGender.DataSource = dataGridView1;
+
+            var series = chartGender.Series[0];
+            series.ChartType = SeriesChartType.Column;
+            series.XValueMember = "Nem";
+            series.YValueMembers = "Count of Nem";
+            series.BorderWidth = 2;
+            var legend = chartGender.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chartGender.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int search = rnd.Next(1, 100);
+            int search = rnd.Next(1, 20);
             txtID.Text = search.ToString();
 
         }
