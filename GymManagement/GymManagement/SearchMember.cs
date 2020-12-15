@@ -115,20 +115,23 @@ namespace GymManagement
             dataGridView1.DataSource = DS.Tables[0];
 
 
-            chartGender.DataSource = NemList;
+            chartGender.DataSource =
+                from x in NemList
+                group NemList by x.nem into g
+                select new
+                {
+                    Nem = g.Key,
+                    Darab = g.Count()
+                };
 
             var series = chartGender.Series[0];
             series.ChartType = SeriesChartType.Column;
             series.YValueMembers = "Nem";
-            //series.YValueMembers = NemList.Count.ToString();
+            series.YValueMembers = "Darab";
             series.BorderWidth = 2;
 
             var legend = chartGender.Legends[0];
             legend.Enabled = false;
-
-            /*var chartArea = chartGender.ChartAreas[0];
-            chartArea.AxisX.MajorGrid.Enabled = false;
-            chartArea.AxisY.MajorGrid.Enabled = false;*/
         }
 
         private void button1_Click(object sender, EventArgs e)

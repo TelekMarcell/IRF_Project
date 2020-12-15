@@ -17,11 +17,11 @@ namespace GymManagement
         {
             InitializeComponent();
         }
-        private List <NewMemberClass> UjTag = new List<NewMemberClass>();
+        private List <NewMemberClass> newmem = new List<NewMemberClass>();
         private void buttonSave_Click(object sender, EventArgs e)
         {
             NewMemberClass mb = new NewMemberClass(txtVezeteknev.Text,txtKeresztnev.Text,comboBoxNem.Text,dateTimePickerSzul.Text,txtTelefon.Text,txtEmail.Text,dateTimePickerJoin.Text,comboBoxGymTime.Text,richTextBoxAdress.Text,comboBoxDuration.Text);
-            UjTag.Add(mb);
+            newmem.Add(mb);
          
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
