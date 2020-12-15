@@ -17,9 +17,9 @@ namespace GymManagement
         public SearchMember()
         {
             InitializeComponent();
+            ListGenerate();
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void Search()
         {
             if (txtID.Text != "")
             {
@@ -36,13 +36,69 @@ namespace GymManagement
 
                 dataGridView1.DataSource = DS.Tables[0];
             }
-            else 
+            else
             {
                 MessageBox.Show("Kérem írjon be egy ID-t!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
+        private string Gender()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
+            SqlCommand cnd = new SqlCommand();
+            cnd.Connection = con;
+
+            con.Open();
+            String syntax = String.Format("SELECT Nem FROM UjTag where TagID = " + txtID.Text + "");
+            cnd = new SqlCommand(syntax, con);
+            SqlDataReader dr = cnd.ExecuteReader();
+            dr.Read();
+
+            string temp = dr[0].ToString();
+            con.Close();
+
+            return temp;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+
+        List <NemClass> NemList = new List <NemClass>();
+        private void ListGenerate()
+        {
+            int index = 1;
+            txtID.Text = index.ToString();
+            for (int i = 0; i < SorokSzama(); i++)
+            {
+                NemClass nem = new NemClass(Gender());
+                NemList.Add(nem);
+                index++;
+            }
+            MessageBox.Show(NemList.Count.ToString());
+        }
+        private int SorokSzama()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
+            SqlCommand cnd = new SqlCommand();
+            cnd.Connection = con;
+
+            con.Open();
+            String syntax = String.Format("SELECT COUNT(*) FROM UjTag");
+            cnd = new SqlCommand(syntax, con);
+            SqlDataReader dr  = cnd.ExecuteReader();
+            dr.Read();
+
+            int temp = (int)dr[0];
+            con.Close();
+
+            return temp;
+        }
+        
         private void SearchMember_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
@@ -58,28 +114,21 @@ namespace GymManagement
 
             dataGridView1.DataSource = DS.Tables[0];
 
-            /*chartGender.Series.Add(new Series());
-            chartGender.Series[0].XValueMember = dataGridView1.Columns["Nem"].HeaderText;
-            chartGender.Series[0].YValueMembers = dataGridView1.Columns["Nem"].DataPropertyName;
-            chartGender.DataSource = dataGridView1.DataSource;
 
-            chartGender.Series[0].ChartType = SeriesChartType.Column;*/
+            chartGender.DataSource = NemList;
 
-            /*chartGender.DataSource = UjTag;
-
-            var series = chartRateData.Series[0];
-            series.ChartType = SeriesChartType.Line;
-            series.XValueMember = "Date";
-            series.YValueMembers = "Value";
+            var series = chartGender.Series[0];
+            series.ChartType = SeriesChartType.Column;
+            series.YValueMembers = "Nem";
+            series.YValueMembers = "Nem";
             series.BorderWidth = 2;
 
-            var legend = chartRateData.Legends[0];
+            var legend = chartGender.Legends[0];
             legend.Enabled = false;
 
-            var chartArea = chartRateData.ChartAreas[0];
+            /*var chartArea = chartGender.ChartAreas[0];
             chartArea.AxisX.MajorGrid.Enabled = false;
-            chartArea.AxisY.MajorGrid.Enabled = false;
-            chartArea.AxisY.IsStartedFromZero = false;*/
+            chartArea.AxisY.MajorGrid.Enabled = false;*/
         }
 
         private void button1_Click(object sender, EventArgs e)

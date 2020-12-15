@@ -92,6 +92,7 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="NemClass.cs" />
     <Compile Include="NewMember.cs">
       <SubType>Form</SubType>
     </Compile>
