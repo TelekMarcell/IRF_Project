@@ -12,9 +12,9 @@ namespace GymManagement
         public string description { get; set; }
         public string muscle { get; set; }
         public string date { get; set; }
-        public string cost { get; set; }
+        public int cost { get; set; }
 
-        public EquipmentClass(string equipment, string description, string muscle, string date, string cost)
+        public EquipmentClass(string equipment, string description, string muscle, string date, int cost)
         {
             this.equipment = equipment;
             this.description = description;

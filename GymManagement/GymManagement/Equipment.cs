@@ -21,14 +21,14 @@ namespace GymManagement
         private List<EquipmentClass> Eszkozok = new List<EquipmentClass>();
         private void btnMentes_Click(object sender, EventArgs e)
         {
-            EquipmentClass esz = new EquipmentClass(txtEszkoz.Text, txtLeiras.Text, txtHI.Text, dateTimePickerDatum.Text, txtAr.Text);
+            EquipmentClass esz = new EquipmentClass(txtEszkoz.Text, txtLeiras.Text, txtHI.Text, dateTimePickerDatum.Text, int.Parse(txtAr.Text)) ;
             Eszkozok.Add(esz);
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\Konditerem.mdf;Integrated Security=True";
             SqlCommand cnd = new SqlCommand();
             cnd.Connection = con;
-            cnd.CommandText = "Insert into Eszkozok (Eszkoz,Leiras,HasznaltIzmok,Datum,Ar) values('" + esz.equipment + "','" + esz.description + "','" + esz.muscle + "','" + esz.date + "','" + esz.cost + "')";
+            cnd.CommandText = "Insert into Eszkozok (Eszkoz,Leiras,HasznaltIzmok,Datum,Ar) values('" + esz.equipment + "','" + esz.description + "','" + esz.muscle + "','" + esz.date + "'," + esz.cost + ")";
 
             SqlDataAdapter DA = new SqlDataAdapter(cnd);
             DataSet DS = new DataSet();
