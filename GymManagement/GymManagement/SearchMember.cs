@@ -78,7 +78,7 @@ namespace GymManagement
                 NemList.Add(nem);
                 index++;
             }
-            MessageBox.Show(NemList.Count.ToString());
+            //MessageBox.Show(NemList.Count.ToString());
         }
         private int SorokSzama()
         {
@@ -120,7 +120,7 @@ namespace GymManagement
             var series = chartGender.Series[0];
             series.ChartType = SeriesChartType.Column;
             series.YValueMembers = "Nem";
-            series.YValueMembers = "Nem";
+            //series.YValueMembers = NemList.Count.ToString();
             series.BorderWidth = 2;
 
             var legend = chartGender.Legends[0];
