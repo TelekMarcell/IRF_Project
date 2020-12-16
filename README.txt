@@ -1,3 +1,9 @@
 Telek Marcell-IRF Project
 
-Az applikációm egy konditerem adminisztrációs feladatait hivatott ellátni. Lehetõségünk van a terembe járó új vendégek, felvett új dolgozók, illetve a rendelt kellékek adatbázisba történõ felvételére. Ezen új adatokat meg is tekinthetjük az erre szolgáló felületeken. A kondi termünket ott hagyó vendégeket ki is törölhetjük az adatbázisból, ezzel jobban átlátva kik azok a tagok, akik még hozzánk járnak. Az új tényezõk felvételénél különbözõ adatokat szükséges megadni, de ezekben segítséget nyújtanak a bemeneti felület melletti címkék. 
+Az applikÃ¡ciÃ³m egy konditerem adminisztrÃ¡ciÃ³s feladatait hivatott ellÃ¡tni. 
+LehetÅ‘sÃ©gÃ¼nk van a terembe jÃ¡rÃ³ Ãºj vendÃ©gek, felvett Ãºj dolgozÃ³k, illetve a rendelt kellÃ©kek adatbÃ¡zisba tÃ¶rtÃ©nÅ‘ felvÃ©telÃ©re.
+Ezen Ãºj adatokat meg is tekinthetjÃ¼k az erre szolgÃ¡lÃ³ felÃ¼leteken. A kondi termÃ¼nket ott hagyÃ³ vendÃ©geket ki is tÃ¶rÃ¶lhetjÃ¼k az adatbÃ¡zisbÃ³l, 
+ezzel jobban Ã¡tlÃ¡tva kik azok a tagok, akik mÃ©g hozzÃ¡nk jÃ¡rnak. Az Ãºj tÃ©nyezÅ‘k felvÃ©telÃ©nÃ©l kÃ¼lÃ¶nbÃ¶zÅ‘ adatokat szÃ¼ksÃ©ges megadni,
+de ezekben segÃ­tsÃ©get nyÃºjtanak a bemeneti felÃ¼let melletti cÃ­mkÃ©k. 
+FelhasznÃ¡lÃ³nÃ©v: PerfectGym19
+JelszÃ³: Konditer1234
